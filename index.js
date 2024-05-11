@@ -36,10 +36,10 @@ async function run() {
     //      my code base here
     const dataCollection = client.db("eventerDB").collection("allServiceData");
 
-    app.post("/addData", async (req, res) => {
+    app.post("/addServices", async (req, res) => {
       const newitem = req.body;
-      console.log(newitem);
-      // const result = await dataCollection.insertOne(result);
+      const result = await dataCollection.insertOne(newitem);
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
