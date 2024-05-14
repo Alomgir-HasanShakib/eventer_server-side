@@ -95,7 +95,7 @@ async function run() {
       const craft = {
         $set: {
           imageUrl: updateServices.imageUrl,
-          serviceName: updateServices.item_name,
+          serviceName: updateServices.serviceName,
           price: updateServices.price,
           description: updateServices.description,
           serviceArea: updateServices.serviceArea,
@@ -104,7 +104,7 @@ async function run() {
       const result = await dataCollection.updateOne(filter, craft, options);
       res.send(result);
     });
-    // data update
+    // booked data update
 
     app.put("/allBookedServices/:id", async (req, res) => {
       const id = req.params.id;
